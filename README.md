@@ -40,13 +40,13 @@ Not yet
 ### Milestones
 
 The numbers represents every weeks.
-1) Talking about the game itself, the goal, and making the readme to present the game.
-2) Learning of Unity3D with tests
-3) Starting creation of 2D models, and AI creation to make enemies move
-4) Implementation of the castle (+ his HP), HP for enemies and implementation of a system of cells to buy tower on it.
-5) Implementing gold system upon death of an enemy and to build towers, + creating tower when clicking on a cell.
-6) Make towers attack when they see an enemy within their range.
-7-8 ) Those 2 weeks will be if we are late on our milestones or if it's already finished we will add extra features.
+- 1) Talking about the game itself, the goal, and making the readme to present the game.
+- 2) Learning of Unity3D with tests
+- 3) Starting creation of 2D models, and AI creation to make enemies move
+- 4) Implementation of the castle (+ his HP), HP for enemies and implementation of a system of cells to buy tower on it.
+- 5) Implementing gold system upon death of an enemy and to build towers, + creating tower when clicking on a cell.
+- 6) Make towers attack when they see an enemy within their range.
+- 7-8 ) Those 2 weeks will be if we are late on our milestones or if it's already finished we will add extra features.
 
 License
 ----
