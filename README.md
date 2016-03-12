@@ -31,7 +31,7 @@ Extras:
 
 ### Architecture
 
-Not yet
+Next week
 
 ### Details of Components
 
