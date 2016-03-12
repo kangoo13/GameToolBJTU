@@ -41,7 +41,7 @@ Next week.
 
 ### Details of Components
 
-Not yet
+Next week.
 
 ### Milestones
 
