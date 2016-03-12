@@ -1,10 +1,10 @@
 # GameToolBJTU
 
 ### Team Members
-Hassan BAHA 15129012 (Kilomat)
-Aurelien SCHILTZ 15129103 (Kangoo13)
-Jeremy KBIDI 15129028 (crysor)
-Beau-oudong TAN 15129009 (Beau-oudong)
+- Hassan BAHA 15129012 (Kilomat)
+- Aurelien SCHILTZ 15129103 (Kangoo13)
+- Jeremy KBIDI 15129028 (crysor)
+- Beau-oudong TAN 15129009 (Beau-oudong)
 
 ### Description
 
