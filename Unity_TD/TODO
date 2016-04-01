@@ -1,0 +1,8 @@
+- Faire le menu d'accueil (sélection de niveaux, icone paramètre, shop, etc)
+- Lors d'un clique sur emplacement, faire en sorte qu'un menu apparaisse avec choix de construction, destruction, ou amélioration.
+- Sprites à revoir (tan)
+- Système de gold suite à fin de niveau
+- Créer le systeme d'utilisateur => Niveau, gold
+- Nouveaux niveaux (tan pour background & sprites)
+- Gestion difficulté des niveaux (diablo-like)
+- Système de spell à créer, un spell maximum par partie avec mana
