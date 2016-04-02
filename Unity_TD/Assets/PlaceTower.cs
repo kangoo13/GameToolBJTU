@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class PlaceMonster : MonoBehaviour {
+public class PlaceTower : MonoBehaviour {
 
 	public GameObject monsterPrefab;
 	private GameObject monster;
@@ -18,7 +18,7 @@ public class PlaceMonster : MonoBehaviour {
 	}
 	
 	private bool canPlaceMonster() {
-		int cost = monsterPrefab.GetComponent<MonsterData> ().levels[0].cost;
+		int cost = monsterPrefab.GetComponent<TowerData> ().levels[0].cost;
 		return monster == null && gameManager.Gold >= cost;
 	}
 	
@@ -32,20 +32,20 @@ public class PlaceMonster : MonoBehaviour {
     		AudioSource audioSource = gameObject.GetComponent<AudioSource>();
 			audioSource.PlayOneShot(audioSource.clip);
  
-			gameManager.Gold -= monster.GetComponent<MonsterData>().CurrentLevel.cost;
+			gameManager.Gold -= monster.GetComponent<TowerData>().CurrentLevel.cost;
 		} else if (canUpgradeMonster()) {
-			monster.GetComponent<MonsterData>().increaseLevel();
+			monster.GetComponent<TowerData>().increaseLevel();
 			AudioSource audioSource = gameObject.GetComponent<AudioSource>();
 			audioSource.PlayOneShot(audioSource.clip);
 
-			gameManager.Gold -= monster.GetComponent<MonsterData>().CurrentLevel.cost;
+			gameManager.Gold -= monster.GetComponent<TowerData>().CurrentLevel.cost;
 		}
 	}
 
 	private bool canUpgradeMonster() {
 		if (monster != null) {
-			MonsterData monsterData = monster.GetComponent<MonsterData> ();
-			MonsterLevel nextLevel = monsterData.getNextLevel();
+			TowerData monsterData = monster.GetComponent<TowerData> ();
+			TowerLevel nextLevel = monsterData.getNextLevel();
 			if (nextLevel != null) {
 				return gameManager.Gold >= nextLevel.cost;
  			}

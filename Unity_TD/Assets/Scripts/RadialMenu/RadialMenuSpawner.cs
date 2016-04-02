@@ -5,19 +5,26 @@ using System.Collections;
 public class RadialMenuSpawner : MonoBehaviour {
 
 	public static RadialMenuSpawner ins;
-	public RadialMenu menuPrefab;			//prefab menu to instantiate
+	public RadialMenu menuPrefab;
+	private GameObject menuInstantied = null;//prefab menu to instantiate
 
 	//TODO: fix this terrible singleton setup
 	void Awake(){
 		ins = this;
 	}
 
+
+
 	//instantiates the menu at the position of the mouse
-	public void SpawnMenu(Interactable obj){
+	public void SpawnMenu(InteractableTower obj, GameObject[] prefabButton){
+		if (menuInstantied != null)
+			Destroy (menuInstantied);
 		RadialMenu newMenu = Instantiate(menuPrefab) as RadialMenu;
 		newMenu.transform.SetParent (transform, false);
 		newMenu.transform.position = Input.mousePosition;
-		newMenu.SpawnButtons(obj);
+		newMenu.SpawnButtons(prefabButton, obj);
+		menuInstantied = newMenu.gameObject;
 	}
+		
 
 }

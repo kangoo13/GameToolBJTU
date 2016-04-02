@@ -7,13 +7,13 @@ public class ShootEnemies : MonoBehaviour {
 	public List<GameObject> enemiesInRange;
 
 	private float lastShotTime;
-	private MonsterData monsterData;
+	private TowerData monsterData;
 
 	// Use this for initialization
 	void Start () {
 		enemiesInRange = new List<GameObject>();
 		lastShotTime = Time.time;
-		monsterData = gameObject.GetComponentInChildren<MonsterData> ();
+		monsterData = gameObject.GetComponentInChildren<TowerData> ();
 	}
 	
 	// Update is called once per frame

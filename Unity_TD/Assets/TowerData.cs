@@ -3,21 +3,21 @@ using System.Collections;
 using System.Collections.Generic;
 
 [System.Serializable]
-public class MonsterLevel {
+public class TowerLevel {
   public int cost;
   public GameObject visualization;
   public GameObject bullet;
   public float fireRate;
 }
 
-public class MonsterData : MonoBehaviour {
+public class TowerData : MonoBehaviour {
 
-	public List<MonsterLevel> levels;
-	private MonsterLevel currentLevel;
+	public List<TowerLevel> levels;
+	private TowerLevel currentLevel;
 
 	
 	//1
-	public MonsterLevel CurrentLevel {
+	public TowerLevel CurrentLevel {
 		//2
 		get {
 			return currentLevel;
@@ -54,7 +54,7 @@ public class MonsterData : MonoBehaviour {
  		CurrentLevel = levels[0];
 	}
 
-	public MonsterLevel getNextLevel() {
+	public TowerLevel getNextLevel() {
 		int currentLevelIndex = levels.IndexOf (currentLevel);
 		int maxLevelIndex = levels.Count - 1;
 		if (currentLevelIndex < maxLevelIndex) {

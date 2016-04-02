@@ -4,12 +4,20 @@ using UnityEngine.EventSystems;
 using System.Collections;
 
 //Add this to your Button Prefab
-public class RadialButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler {
+class RadialButton : MonoBehaviour  {
 
-	public Image circle; 		//button image
-	public Image icon;			//icon in button
 	public RadialMenu myMenu;	//links back to radial menu
 	public float speed = 8f;	//animation speed
+	private InteractableTower obj = null;
+
+	public InteractableTower Obj {
+		get {
+			return obj;
+		}
+		set {
+			obj = value;
+		}
+	}
 
 	Color defaultColor;			//used to track color of icon
 
@@ -28,21 +36,8 @@ public class RadialButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
 		}
 		transform.localScale = Vector3.one;
 	}
+		
 
-	//highlights button and sets it to selected
-	public void OnPointerEnter (PointerEventData eventData)
-	{
-		myMenu.selected = this;
-		defaultColor = circle.color;
-		circle.color = Color.white;
-	}
-
-	//de-highlights and de-selects button
-	public void OnPointerExit (PointerEventData eventData)
-	{
-		myMenu.selected = null;
-		circle.color = defaultColor;
-	}
 
 
 }

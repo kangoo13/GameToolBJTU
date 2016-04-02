@@ -70,9 +70,5 @@ public class GameManagerBehavior : MonoBehaviour {
 		Wave = 0;
 		Health = 5;
 	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+
 }
