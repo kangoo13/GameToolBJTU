@@ -4,7 +4,16 @@ using System.Collections;
 //Add this script to game objects with which you want to interact
 public class InteractableTower : MonoBehaviour {
 
-	private GameObject instantiatedTower = null;
+	private TowerData instantiatedTower = null;
+
+	public TowerData InstantiatedTower {
+		get {
+			return instantiatedTower;
+		}
+		set {
+			instantiatedTower = value;
+		}
+	}
 
 	//dummy class for storing the menu info (this would likely be
 	//handled by your game's character data or other gameplay data)
@@ -22,6 +31,11 @@ public class InteractableTower : MonoBehaviour {
 	void OnMouseDown(){
 		if (instantiatedTower == null)
 			RadialMenuSpawner.ins.SpawnMenu(this, options[0].buttonPrefabs);
+		else if (instantiatedTower.upgradable())
+			RadialMenuSpawner.ins.SpawnMenu(this, options[1].buttonPrefabs);
+		else
+			RadialMenuSpawner.ins.SpawnMenu(this, options[2].buttonPrefabs);
+			
 	}
 		
 

@@ -6,8 +6,7 @@ using UnityEngine.EventSystems;
 class RadialBuild : RadialButton
 {
 	public GameObject[] towers;
-
-	public GameObject monsterPrefab;
+	public GameObject towerPrefab;
 	private GameObject monster;
 	private GameManagerBehavior gameManager;
 
@@ -22,7 +21,7 @@ class RadialBuild : RadialButton
 	}
 
 	private bool canPlaceMonster() {
-		int cost = monsterPrefab.GetComponent<TowerData> ().levels[0].cost;
+		int cost = towerPrefab.GetComponent<TowerData> ().levels[0].cost;
 		return monster == null && gameManager.Gold >= cost;
 	}
 
@@ -31,13 +30,13 @@ class RadialBuild : RadialButton
 		//2
 		if (canPlaceMonster ()) {
 			//3
-			monster = (GameObject) Instantiate(monsterPrefab, Obj.transform.position, Quaternion.identity);
+			monster = (GameObject) Instantiate(towerPrefab, Obj.transform.position, Quaternion.identity);
 			//4
 			AudioSource audioSource = monster.GetComponent<AudioSource>();
 			audioSource.PlayOneShot(audioSource.clip);
 
 			gameManager.Gold -= monster.GetComponent<TowerData>().CurrentLevel.cost;
-
+			Obj.InstantiatedTower = monster.GetComponent<TowerData> ();
 
 		} else if (canUpgradeMonster()) {
 			monster.GetComponent<TowerData>().increaseLevel();

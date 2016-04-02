@@ -41,15 +41,15 @@ public class PlaceTower : MonoBehaviour {
 			gameManager.Gold -= monster.GetComponent<TowerData>().CurrentLevel.cost;
 		}
 	}
-
 	private bool canUpgradeMonster() {
 		if (monster != null) {
 			TowerData monsterData = monster.GetComponent<TowerData> ();
 			TowerLevel nextLevel = monsterData.getNextLevel();
 			if (nextLevel != null) {
 				return gameManager.Gold >= nextLevel.cost;
- 			}
-  		}
+			}
+		}
 		return false;
 	}
+
 }
