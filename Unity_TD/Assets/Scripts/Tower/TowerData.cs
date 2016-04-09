@@ -29,12 +29,9 @@ public class TowerData : MonoBehaviour {
 			GameObject levelVisualization = levels[currentLevelIndex].visualization;
 			for (int i = 0; i < levels.Count; i++) {
 				if (levelVisualization != null) {
-					Debug.Log (levels.Count);
-					Debug.Log (currentLevelIndex);
 					if (i == currentLevelIndex) {
 						levels[i].visualization.SetActive(true);
 					} else {
-						Debug.Log ("je suis false : " + i);
 						levels[i].visualization.SetActive(false);
 					}
 				}
