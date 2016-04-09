@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class ButtonSelectLvl : Button
+public class ButtonShop : Button
 {
 
 	// Use this for initialization

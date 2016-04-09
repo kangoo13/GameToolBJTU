@@ -1,22 +1,19 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class MenuManager : MonoBehaviour
+public class ButtonMusique : MonoBehaviour
 {
+
 	// Use this for initialization
 	void Start ()
 	{
-		
+	
 	}
 	
 	// Update is called once per frame
 	void Update ()
 	{
 	
-	}
-
-	public void SelectLevel(string level){
-		GameManager.Instance.LoadLevel (level);
 	}
 }
 
