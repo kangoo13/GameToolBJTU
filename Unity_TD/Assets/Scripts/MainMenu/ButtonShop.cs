@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class ButtonShop : Button
+class ButtonShop : Button
 {
 
 	// Use this for initialization

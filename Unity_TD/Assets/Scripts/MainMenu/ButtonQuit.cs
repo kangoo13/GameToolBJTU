@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class ButtonQuit : Button
+class ButtonQuit : Button
 {
 
 	// Use this for initialization

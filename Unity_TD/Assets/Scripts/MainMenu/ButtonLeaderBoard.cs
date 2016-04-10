@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class ButtonLeaderBoard : Button
+class ButtonLeaderBoard : Button
 {
 
 	// Use this for initialization
