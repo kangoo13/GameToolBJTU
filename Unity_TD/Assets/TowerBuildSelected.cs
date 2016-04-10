@@ -29,6 +29,8 @@ public class TowerBuildSelected : MonoBehaviour {
 	public void buildThisTower()
 	{
 		reference.createTower (tower);
+		GameManagerBehavior gameManager = GameObject.Find("GameManager").GetComponent<GameManagerBehavior>();
+		gameManager.isTowerPanelOpened = false;
 		Destroy (transform.parent.gameObject);
 	}
 

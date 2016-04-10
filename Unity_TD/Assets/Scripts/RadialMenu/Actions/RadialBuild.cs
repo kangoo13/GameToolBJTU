@@ -30,8 +30,11 @@ public class RadialBuild : RadialButton
 		GameObject menu = Instantiate (towerMenuPrefab) as GameObject;
 		menu.transform.SetParent (this.transform.parent.transform.parent.transform, false);
 		menu.GetComponent<TowerBuildPanel> ().Initialize (this);
-
-		//Destroy (this.transform.parent.gameObject);
+		foreach (Transform child in this.transform.parent.transform)
+		{
+			child.gameObject.GetComponent<Image> ().enabled = false;
+		}
+		gameManager.isTowerPanelOpened = true;
 
 	}
 
