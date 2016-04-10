@@ -6,6 +6,7 @@ public class MonsterInfo : MonoBehaviour {
 	public bool isImmunedToPoison = false;
 	public bool isImmunedToIce = false;
 	public bool isImmunedToStunned = false;
+	public bool isRegenerable = false;
 
 	void Start()
 	{
@@ -64,7 +65,8 @@ public class MonsterInfo : MonoBehaviour {
 	}
 	// Update is called once per frame
 	void Update () {
-		
-	
+		HealthBar hb = GetComponentInChildren<HealthBar> ();
+		if (isRegenerable && hb.currentHealth < hb.maxHealth)
+			hb.currentHealth += Mathf.Min(hb.maxHealth / 200f, hb.maxHealth);
 	}
 }
