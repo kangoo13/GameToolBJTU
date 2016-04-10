@@ -8,11 +8,6 @@ public class MonsterInfo : MonoBehaviour {
 	public bool isImmunedToStunned = false;
 	public bool isRegenerable = false;
 
-	void Start()
-	{
-		
-
-	}
 
 	public void touchedByIce()
 	{
@@ -34,7 +29,7 @@ public class MonsterInfo : MonoBehaviour {
 
 	IEnumerator iced() {
 		float i = 0f;
-		while (i <= 3f) {
+		while (i <= 2f) {
 			GetComponent<MoveEnemy> ().isIced = true;
 			i += 0.05f;
 			yield return new WaitForSeconds(0.05f);
@@ -45,10 +40,9 @@ public class MonsterInfo : MonoBehaviour {
 
 	IEnumerator stunned() {
 		float i = 0f;
-		while (i <= 3f) {
+		while (i <= 2f) {
 			GetComponent<MoveEnemy> ().isStunned = true;
 			i += 0.05f;
-			Debug.Log (i);
 			yield return new WaitForSeconds(0.05f);
 		}
 		GetComponent<MoveEnemy> ().isStunned = false;
