@@ -5,7 +5,6 @@ public class MoveEnemy : MonoBehaviour {
 	[HideInInspector]
 	public GameObject[] waypoints;
 	private int currentWaypoint = 0;
-	private float lastWaypointSwitchTime;
 	public float speed = 1.0f;
 	public bool isIced = false;
 	public bool isStunned = false;
@@ -32,7 +31,6 @@ public class MoveEnemy : MonoBehaviour {
 			if (currentWaypoint < waypoints.Length - 2) {
 				// 4 Switch to next waypoint
 				currentWaypoint++;
-				lastWaypointSwitchTime = Time.time;
 			
 				RotateIntoMoveDirection();
 			} else {
