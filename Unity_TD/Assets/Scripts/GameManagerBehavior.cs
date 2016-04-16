@@ -3,7 +3,7 @@ using System.Collections;
 using UnityEngine.UI;
 
 public class GameManagerBehavior : MonoBehaviour {
-
+	public bool isTowerPanelOpened = false;
 	public Text goldLabel;
 	private int gold;
 	public int Gold {
@@ -35,6 +35,9 @@ public class GameManagerBehavior : MonoBehaviour {
 
 	public Text healthLabel;
 	public GameObject[] healthIndicator;
+
+
+	// add function regen mana each 5 sec
 
 	private int health;
 	public int Health {

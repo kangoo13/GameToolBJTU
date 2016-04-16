@@ -29,13 +29,15 @@ public class InteractableTower : MonoBehaviour {
 	public Action[] options;
 
 	void OnMouseDown(){
-		if (instantiatedTower == null)
-			RadialMenuSpawner.ins.SpawnMenu(this, options[0].buttonPrefabs);
-		else if (instantiatedTower.upgradable())
-			RadialMenuSpawner.ins.SpawnMenu(this, options[1].buttonPrefabs);
-		else
-			RadialMenuSpawner.ins.SpawnMenu(this, options[2].buttonPrefabs);
-			
+		GameManagerBehavior gameManager = GameObject.Find("GameManager").GetComponent<GameManagerBehavior>();
+		if (!gameManager.isTowerPanelOpened) {
+			if (instantiatedTower == null)
+				RadialMenuSpawner.ins.SpawnMenu (this, options [0].buttonPrefabs);
+			else if (instantiatedTower.upgradable ())
+				RadialMenuSpawner.ins.SpawnMenu (this, options [1].buttonPrefabs);
+			else
+				RadialMenuSpawner.ins.SpawnMenu (this, options [2].buttonPrefabs);
+		}
 	}
 		
 

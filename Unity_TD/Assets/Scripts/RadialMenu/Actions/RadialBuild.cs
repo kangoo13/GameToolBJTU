@@ -3,12 +3,12 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-class RadialBuild : RadialButton
+public class RadialBuild : RadialButton
 {
-	public GameObject[] towers;
-	public GameObject towerPrefab;
+	public GameObject towerMenuPrefab;
 	private GameObject monster;
 	private GameManagerBehavior gameManager;
+
 
 	// Use this for initialization
 	void Start () {
@@ -21,16 +21,31 @@ class RadialBuild : RadialButton
 	}
 
 	private bool canPlaceMonster() {
-		int cost = towerPrefab.GetComponent<TowerData> ().levels[0].cost;
-		return monster == null && gameManager.Gold >= cost;
+		int cost = monster.GetComponent<TowerData> ().levels[0].cost;
+		return gameManager.Gold >= cost;
+	} 
+
+	void ButtonClicked()
+	{
+		GameObject menu = Instantiate (towerMenuPrefab) as GameObject;
+		menu.transform.SetParent (this.transform.parent.transform.parent.transform, false);
+		menu.GetComponent<TowerBuildPanel> ().Initialize (this);
+		foreach (Transform child in this.transform.parent.transform)
+		{
+			child.gameObject.GetComponent<Image> ().enabled = false;
+		}
+		gameManager.isTowerPanelOpened = true;
+
 	}
 
 	//1
-	void ButtonClicked () {
+	public void createTower (GameObject monstero) {
+		monster = monstero;
 		//2
 		if (canPlaceMonster ()) {
 			//3
-			monster = (GameObject) Instantiate(towerPrefab, Obj.transform.position, Quaternion.identity);
+
+			monster = (GameObject) Instantiate(monster, Obj.transform.position, Quaternion.identity);
 			//4
 			AudioSource audioSource = monster.GetComponent<AudioSource>();
 			audioSource.PlayOneShot(audioSource.clip);
