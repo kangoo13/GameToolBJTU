@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class ButtonEffect : MonoBehaviour
+public class ButtonSoundEffect : MonoBehaviour
 {
 
 	// Use this for initialization

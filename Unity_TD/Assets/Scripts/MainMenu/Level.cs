@@ -25,5 +25,9 @@ public class Level : MonoBehaviour
 	{
 	
 	}
+
+	void OnSelected(string level){
+		GameManager.Instance.LoadLevel (level);
+	}
 }
 

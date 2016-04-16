@@ -3,17 +3,8 @@ using System.Collections;
 
 public class ButtonOption : Button
 {
-
-	// Use this for initialization
-	void Start ()
-	{
-	
-	}
-	
-	// Update is called once per frame
-	void Update ()
-	{
-	
+	public virtual void OnSelected (string scene){
+		GameManager.Instance.LoadScene (scene);
 	}
 }
 

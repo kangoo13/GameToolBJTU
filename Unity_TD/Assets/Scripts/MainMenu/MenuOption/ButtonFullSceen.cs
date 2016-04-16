@@ -3,17 +3,21 @@ using System.Collections;
 
 public class ButtonFullSceen : MonoBehaviour
 {
+	int status {
+		get { return status; }
+	} = 0;
 
-	// Use this for initialization
-	void Start ()
-	{
-	
+	void start(){
+		status = PlayerPrefs.GetInt ("status_full_screen");
 	}
-	
-	// Update is called once per frame
-	void Update ()
-	{
-	
+
+	public void updateStatus(){
+		if (PlayerPrefs.GetInt ("status_full_screen") == 0) {
+			status = PlayerPrefs.SetInt ("status_full_screen", 1);
+		} 
+		else {
+			status = PlayerPrefs.SetInt ("status_full_screen", 0);
+		}
 	}
 }
 
