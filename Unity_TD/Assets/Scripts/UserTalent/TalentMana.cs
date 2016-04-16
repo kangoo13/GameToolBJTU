@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class TalentMana : Talent
+class TalentMana : Talent
 {
 	public TalentMana(){
 		talent_name = "Upgrade max mana";
@@ -15,7 +15,7 @@ public class TalentMana : Talent
 
 	void UpdateEffect(){
 		for (int i = 0; i <= current_point; i++){
-			PlayerPrefs.SetInt ("mana_max", PlayerPrefs.GetInt ("mana_max") += 5);
+			PlayerPrefs.SetInt ("mana_max", PlayerPrefs.GetInt ("mana_max") + 5);
 		}
 	}
 }

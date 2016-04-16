@@ -3,30 +3,12 @@ using System.Collections;
 
 public class User : MonoBehaviour
 {
-	int level {
-		get { return level; }
-		set { level = PlayerPrefs.SetInt("level", value); }
-	}
-	int gold {
-		get { return gold; }
-		set { gold = PlayerPrefs.SetInt("gold", value); }
-	}
-	int current_mana {
-		get { return current_mana; }
-		set { current_mana = value; }
-	}
-	int mana_max {
-		get { return mana_max; }
-		set { 
-			mana_max = PlayerPrefs.SetInt("mana_max", value);
-		}
-	}
-	int mana_regen{
-		get { return mana_regen;}
-	}
-	TalentTree user_talents {
-		get { return user_talents; }
-	}
+	int level;
+	int gold;
+	int current_mana;
+	int mana_max;
+	int mana_regen;
+	TalentTree user_talents;
 
 	// Use this for initialization
 	void Start ()
