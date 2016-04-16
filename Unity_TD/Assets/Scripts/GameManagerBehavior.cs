@@ -3,7 +3,7 @@ using System.Collections;
 using UnityEngine.UI;
 
 public class GameManagerBehavior : MonoBehaviour {
-
+	public bool isTowerPanelOpened = false;
 	public Text goldLabel;
 	private int gold;
 	public int Gold {

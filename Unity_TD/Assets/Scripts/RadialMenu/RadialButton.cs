@@ -4,7 +4,7 @@ using UnityEngine.EventSystems;
 using System.Collections;
 
 //Add this to your Button Prefab
-class RadialButton : MonoBehaviour  {
+public class RadialButton : MonoBehaviour  {
 
 	public RadialMenu myMenu;	//links back to radial menu
 	public float speed = 8f;	//animation speed

@@ -13,6 +13,12 @@ public class BulletBehavior : MonoBehaviour {
 	private float startTime;
 	
 	private GameManagerBehavior gameManager;
+	[SerializeField]
+	private bool isPoison = false;
+	[SerializeField]
+	private bool isIce = false;
+	[SerializeField]
+	private bool isStun = false;
 
 	// Use this for initialization
 	void Start () {
@@ -32,6 +38,12 @@ public class BulletBehavior : MonoBehaviour {
 		if (gameObject.transform.position.Equals(targetPosition)) {
 			if (target != null) {
 				// 3
+				if (isIce)
+					target.GetComponent<MonsterInfo> ().touchedByIce ();
+				if (isPoison)
+					target.GetComponent<MonsterInfo> ().touchedByPoison (damage);
+				if (isStun)
+					target.GetComponent<MonsterInfo> ().touchedByStun ();
 				Transform healthBarTransform = target.transform.FindChild("HealthBar");
 				HealthBar healthBar = 
 					healthBarTransform.gameObject.GetComponent<HealthBar>();
