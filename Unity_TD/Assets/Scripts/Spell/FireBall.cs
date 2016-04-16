@@ -1,10 +1,16 @@
 ﻿using System;
 using UnityEngine;
 
-public class FireBall : MonoBehaviour, ISpell
+public class FireBall : ISpell
 {
-	void Start()
+	public Sprite imageSpell { get; set; }
+
+
+	public FireBall()
 	{
+		string texture = "Assets/Images/Spell/fire-ball-icon-th.png";
+		imageSpell = Resources.Load(texture) as Sprite;
+
 	}
 
 	public void doAction()
