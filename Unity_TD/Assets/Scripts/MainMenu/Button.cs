@@ -1,9 +1,10 @@
-﻿using UnityEngine;
-using System.Collections;
+﻿using System;
 
 public abstract class Button
 {
 	string btn_name;
-		
-	public void OnSelected (string scene){}
+
+	public void OnSelected(string sceneName) {
+	}
 }
+

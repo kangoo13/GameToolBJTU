@@ -1,23 +1,26 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Level : MonoBehaviour
 {
-	string level_name {
-		get { return level_name; }
-		set { 
-			level_name = value;
-		}
-	}
-	string scene {
-		get { return scene; }
-		set { scene = value; }
+	public String title;
+	public String levelName;
+	public String sceneName;
+
+
+	public void UpdateText() {
+		transform.GetChild (0).GetComponent<Text> ().text = title;
+		transform.GetChild (1).GetComponent<Text> ().text = levelName;
 	}
 
 	// Use this for initialization
 	void Start ()
 	{
-		
+	//	levelObject = (GameObject)Resources.Load ("Prefabs/Menu/Level1", GameObject) as GameObject;
+	//	levelObject.GetComponent<Text> ().text = sceneName;
 	}
 	
 	// Update is called once per frame
@@ -26,8 +29,9 @@ public class Level : MonoBehaviour
 	
 	}
 
-	void OnSelected(string level){
-		GameManager.Instance.LoadLevel (level);
+	public void OnSelectedScene() {
+		SceneManager.LoadScene (sceneName);	
+//		SceneManager.LoadScene (1);	
 	}
 }
 

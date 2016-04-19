@@ -22,8 +22,6 @@ public class InteractableTower : MonoBehaviour {
 		public GameObject[] buttonPrefabs;
 	}
 
-
-
 	//this is where you set your menu options in the inspector (again,
 	//your game data should ultimately handle this
 	public Action[] options;
