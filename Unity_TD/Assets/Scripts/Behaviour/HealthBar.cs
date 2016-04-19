@@ -18,4 +18,17 @@ public class HealthBar : MonoBehaviour {
 		tmpScale.x = currentHealth / maxHealth * originalScale;
 		gameObject.transform.localScale = tmpScale;	
 	}
+
+	public void removeHealth(float damage)
+	{
+		currentHealth -= Mathf.Max(damage, 0);
+		if (currentHealth <= 0) {
+			AudioSource audioSource = GetComponentInParent<AudioSource>();
+			AudioSource.PlayClipAtPoint(audioSource.clip, transform.position);
+
+			GameManagerBehavior.Instance.Gold += 50;
+			Destroy(this.transform.GetComponentInParent<MonsterInfo>().gameObject);
+
+		}
+	}
 }

@@ -47,15 +47,7 @@ public class BulletBehavior : MonoBehaviour {
 				Transform healthBarTransform = target.transform.FindChild("HealthBar");
 				HealthBar healthBar = 
 					healthBarTransform.gameObject.GetComponent<HealthBar>();
-				healthBar.currentHealth -= Mathf.Max(damage, 0);
-				// 4
-				if (healthBar.currentHealth <= 0) {
-					Destroy(target);
-					AudioSource audioSource = target.GetComponent<AudioSource>();
-					AudioSource.PlayClipAtPoint(audioSource.clip, transform.position);
-					
-					gameManager.Gold += 50;
-				}
+				healthBar.removeHealth (damage);
 			}
 			Destroy(gameObject);
 		}	

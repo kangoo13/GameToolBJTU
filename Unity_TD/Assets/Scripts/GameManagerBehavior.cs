@@ -4,6 +4,7 @@ using UnityEngine.UI;
 
 public class GameManagerBehavior : MonoBehaviour {
 	public bool isTowerPanelOpened = false;
+	private static GameManagerBehavior instance;
 	public Text goldLabel;
 	private int gold;
 	public int Gold {
@@ -11,6 +12,13 @@ public class GameManagerBehavior : MonoBehaviour {
   		set {
 			gold = value;
     		goldLabel.GetComponent<Text>().text = "GOLD: " + gold;
+		}
+	}
+	public static GameManagerBehavior Instance
+	{
+		get 
+		{
+			return instance;
 		}
 	}
 
@@ -72,6 +80,7 @@ public class GameManagerBehavior : MonoBehaviour {
 		Gold = 1000;
 		Wave = 0;
 		Health = 5;
+		instance = this;
 	}
 
 }

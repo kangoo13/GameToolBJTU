@@ -1,26 +1,28 @@
 ﻿using System;
+
+using System;
 using UnityEngine;
 
-public class FireBall : ISpell
+public class IceBall : ISpell
 {
 	public Sprite imageSpell { get; set; }
 	public GameObject prefabAnim { get; set; }
 	public float initialDamage { get; set; }
 
-	public FireBall()
+	public IceBall()
 	{
-		initialDamage = 10f;
+		initialDamage = 3f;
 	}
 
 
 	public string getTexturePath()
 	{
-		return "Assets/Images/Spell/fire-ball-icon-th.png";
+		return "Assets/Images/Spell/ice-ball-icon-th.png";
 	}
 
 	public string getPrefabAnimPath()
 	{
-		return "Assets/Prefabs/SpellAnim/FireBallAnimPrefab.prefab";
+		return "Assets/Prefabs/SpellAnim/IceBallAnimPrefab.prefab";
 	}
 
 	public void doAction(Vector3 mousePosition)
@@ -33,8 +35,10 @@ public class FireBall : ISpell
 		foreach (Collider2D enemy in hit) {
 			if (enemy.tag == "Enemy") {
 				enemy.gameObject.GetComponentInChildren<HealthBar> ().removeHealth (initialDamage);
+				enemy.gameObject.GetComponent<MonsterInfo> ().touchedByIce ();
 			}
 		}
 	}
 }
+
 

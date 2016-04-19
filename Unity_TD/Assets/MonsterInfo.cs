@@ -53,7 +53,7 @@ public class MonsterInfo : MonoBehaviour {
 		while (i != 3) {
 			i++;
 			float rdamage = damage / 10f;
-			GetComponentInChildren<HealthBar> ().currentHealth -= Mathf.Max(rdamage, 0);
+			GetComponentInChildren<HealthBar> ().removeHealth (rdamage);
 			yield return new WaitForSeconds(1);
 		}
 	}
