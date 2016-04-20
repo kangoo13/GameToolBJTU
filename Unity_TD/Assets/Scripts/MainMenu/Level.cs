@@ -21,6 +21,8 @@ public class Level : MonoBehaviour
 	{
 	//	levelObject = (GameObject)Resources.Load ("Prefabs/Menu/Level1", GameObject) as GameObject;
 	//	levelObject.GetComponent<Text> ().text = sceneName;
+		RectTransform rt = transform.GetComponent<RectTransform>();
+		rt.sizeDelta = new Vector2 ( transform.GetComponent<Image>().rectTransform.rect.width, transform.GetComponent<Image>().rectTransform.rect.height);
 	}
 	
 	// Update is called once per frame

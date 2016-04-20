@@ -11,8 +11,9 @@ using UnityEngine.SceneManagement;
 public class LevelMenu : MonoBehaviour {
 
 	private LevelSelection instantiatedLevel = null;
-	private int x = 100;
-	private int y = -60;
+	private int x = 225;
+	private int y = 0;
+
 	public GameObject obj;
 	public LevelSelection InstantiatedLevel {
 		get {
@@ -35,6 +36,9 @@ public class LevelMenu : MonoBehaviour {
 	void Start() {
 		int i = 0;
 
+		double width = GetComponent<RectTransform> ().rect.x;
+		double height = GetComponent<RectTransform> ().rect.y;
+
 		foreach (Action action in actions) {
 			
 			GameObject objLevel = Instantiate (obj) as GameObject;
@@ -49,15 +53,31 @@ public class LevelMenu : MonoBehaviour {
 
 			lvl.UpdateText();
 
-			if (i % 2 == 0) {
-				rt.localPosition = new Vector3 (x + (x * i), y, 0f);
-			} else {
+			//if (i % 2 == 0) {
+				rt.localPosition = new Vector3 (x * i, y, 0f);
+			/*} else {
 				rt.anchorMin = new Vector2 (0, 0);
 				rt.anchorMax = new Vector2 (0, 0);
 				rt.pivot = new Vector2 (0, 0);
 				rt.localPosition = new Vector3 ((x * i), y * -1, 0f);
-			}
+			}*/
 			i++;
+		}
+
+		i = 0;
+		int l = actions.Length - 5;
+		int total_ajout = 0;
+		if (l > 0) {
+			total_ajout = 230;
+			while (i != l) {
+				/*if (i == 2) {
+
+				}*/
+				RectTransform rt = GetComponent<RectTransform> ();
+	//			RectTransform rt = transform.parent.GetComponent<RectTransform> ();
+				rt.sizeDelta = new Vector2 (rt.sizeDelta.x + total_ajout, rt.sizeDelta.y);
+				i++;
+			}
 		}
 		/*		int i = 0;
 		foreach (GameObject level in levelObject) {
