@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using System;
 
 public class GameManagerBehavior : MonoBehaviour {
 	public bool isTowerPanelOpened = false;
@@ -11,7 +12,7 @@ public class GameManagerBehavior : MonoBehaviour {
   		get { return gold; }
   		set {
 			gold = value;
-    		goldLabel.GetComponent<Text>().text = "GOLD: " + gold;
+			goldLabel.GetComponent<Text>().text = gold.ToString();
 		}
 	}
 	public static GameManagerBehavior Instance
@@ -37,7 +38,7 @@ public class GameManagerBehavior : MonoBehaviour {
 					nextWaveLabels[i].GetComponent<Animator>().SetTrigger("nextWave");
 				}
 			}
-			waveLabel.text = "WAVE: " + (wave + 1);
+			waveLabel.text = "WAVE : " + (wave + 1);
 		}
 	}
 
@@ -57,7 +58,7 @@ public class GameManagerBehavior : MonoBehaviour {
 			}
 			// 2
 			health = value;
-			healthLabel.text = "HEALTH: " + health;
+			healthLabel.text = health.ToString();
 			// 2
 			if (health <= 0 && !gameOver) {
 				gameOver = true;
