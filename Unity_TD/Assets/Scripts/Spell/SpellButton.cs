@@ -8,11 +8,9 @@ public class SpellButton : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-//		currentSpell = TestPlayer.Instance.spellActive;
-		GameObject spellPrefab = UnityEditor.AssetDatabase.LoadAssetAtPath<GameObject>(currentSpell.getSpellPrefabPath()) as GameObject;
-		GameObject spellPrefabObj = Instantiate (spellPrefab) as GameObject;
-		spellPrefabObj.transform.SetParent (this.transform, false);
-		spellPrefabObj.GetComponent<ISpell>().prefabAnim = UnityEditor.AssetDatabase.LoadAssetAtPath<GameObject>(currentSpell.getPrefabAnimPath()) as GameObject;
+		GameObject obj = transform.GetChild (0).gameObject;
+		currentSpell = (ISpell)SpellManager.Instance.addSpellObject (obj, ManageTheGame.Instance.Player.spellActive);
+		obj.GetComponent<ISpell>().prefabAnim = UnityEditor.AssetDatabase.LoadAssetAtPath<GameObject>(currentSpell.getPrefabAnimPath()) as GameObject;
 	}
 
 

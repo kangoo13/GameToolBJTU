@@ -3,7 +3,7 @@
 using System;
 using UnityEngine;
 
-public class IceBall : ISpell
+public class IceBall : MonoBehaviour, ISpell
 {
 	public Sprite imageSpell { get; set; }
 	public GameObject prefabAnim { get; set; }

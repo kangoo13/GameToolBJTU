@@ -9,10 +9,10 @@ class User
 	int mana_max;
 	int mana_regen;
 	TalentTree user_talents;
-	public ISpell spellActive = null;
+	public string spellActive = null;
 
 	// Use this for initialization
-	void Start ()
+	public User ()
 	{
 		if (!PlayerPrefs.HasKey ("level")) {
 			PlayerPrefs.SetInt ("level", 0);
@@ -35,6 +35,7 @@ class User
 		mana_max = PlayerPrefs.GetInt ("mana_max");
 		mana_regen = 5;
 		current_mana = mana_max;
+		spellActive = "FireBall";
 	}
 }
 
