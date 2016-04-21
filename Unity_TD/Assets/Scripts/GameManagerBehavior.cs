@@ -9,12 +9,15 @@ public class GameManagerBehavior : MonoBehaviour {
 	public Text goldLabel;
 	private int gold;
 	public int Gold {
-  		get { return gold; }
-  		set {
+		get {
+			return gold;
+		}
+		set  {
 			gold = value;
-			goldLabel.GetComponent<Text>().text = gold.ToString();
+			goldLabel.text = gold.ToString ();
 		}
 	}
+
 	public static GameManagerBehavior Instance
 	{
 		get 

@@ -9,7 +9,7 @@ public class FireBall : ISpell
 
 	public FireBall()
 	{
-		initialDamage = 10f;
+		initialDamage = 100f;
 	}
 
 
