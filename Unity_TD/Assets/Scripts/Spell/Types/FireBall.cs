@@ -10,7 +10,7 @@ public class FireBall : MonoBehaviour, ISpell
 
 	public FireBall()
 	{
-		initialDamage = 10f;
+		initialDamage = 100f;
 	}
 
 	public string getSpellName()
