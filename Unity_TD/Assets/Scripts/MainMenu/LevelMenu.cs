@@ -11,7 +11,7 @@ using UnityEngine.SceneManagement;
 public class LevelMenu : MonoBehaviour {
 
 	private LevelSelection instantiatedLevel = null;
-	private int x = 225;
+	private int x = 100;
 	private int y = 0;
 
 	public GameObject obj;
@@ -68,7 +68,7 @@ public class LevelMenu : MonoBehaviour {
 		int l = actions.Length - 5;
 		int total_ajout = 0;
 		if (l > 0) {
-			total_ajout = 230;
+			total_ajout = 150;
 			while (i != l) {
 				/*if (i == 2) {
 
