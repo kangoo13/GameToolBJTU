@@ -5,11 +5,15 @@ class User
 {
 	int level;
 	int gold;
-	int current_mana;
-	int mana_max;
-	int mana_regen;
+	Mana playerMana;
 	TalentTree user_talents;
 	public string spellActive = null;
+
+	public Mana PlayerMana {
+		get {
+			return playerMana;
+		}
+	}
 
 	// Use this for initialization
 	public User ()
@@ -22,19 +26,17 @@ class User
 			PlayerPrefs.SetInt ("gold", 0);
 		}
 
-		if (!PlayerPrefs.HasKey("mana_max")){
-			PlayerPrefs.SetInt ("mana_max", 100);
+		if (!PlayerPrefs.HasKey("maxMana")){
+			PlayerPrefs.SetInt ("maxMana", 100);
 		}
 
-		if (!PlayerPrefs.HasKey ("mana_regen")) {
-			PlayerPrefs.SetInt ("mana_regen", 5);
+		if (!PlayerPrefs.HasKey ("regenMana")) {
+			PlayerPrefs.SetInt ("regenMana", 5);
 		}
 
 		level = PlayerPrefs.GetInt ("level");
 		gold = PlayerPrefs.GetInt ("gold");
-		mana_max = PlayerPrefs.GetInt ("mana_max");
-		mana_regen = 5;
-		current_mana = mana_max;
+		playerMana = new Mana ();
 		spellActive = "FireBall";
 	}
 }

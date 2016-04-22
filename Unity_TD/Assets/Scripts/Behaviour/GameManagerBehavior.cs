@@ -7,6 +7,7 @@ public class GameManagerBehavior : MonoBehaviour {
 	public bool isTowerPanelOpened = false;
 	private static GameManagerBehavior instance;
 	public Text goldLabel;
+	public Text manaLabel;
 	private int gold;
 	public int Gold {
 		get {
@@ -85,6 +86,7 @@ public class GameManagerBehavior : MonoBehaviour {
 		Wave = 0;
 		Health = 5;
 		instance = this;
+		manaLabel.text = ManageTheGame.Instance.Player.PlayerMana.CurrentMana.ToString();
 	}
 
 }

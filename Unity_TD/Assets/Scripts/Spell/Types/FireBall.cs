@@ -6,7 +6,6 @@ public class FireBall : MonoBehaviour, ISpell
 	public Sprite imageSpell { get; set; }
 	public GameObject prefabAnim { get; set; }
 	public float initialDamage { get; set; }
-	private bool isSpellTriggered = false;
 
 	public FireBall()
 	{
@@ -47,18 +46,6 @@ public class FireBall : MonoBehaviour, ISpell
 		}
 	}
 
-	public void triggerSpell()
-	{
-		isSpellTriggered = true;
 
-	}
-
-	void Update()
-	{
-		if (isSpellTriggered != false && Input.GetKeyDown(KeyCode.Mouse0)) {
-			doAction (Input.mousePosition);
-			isSpellTriggered = false;
-		}
-	}
 }
 
