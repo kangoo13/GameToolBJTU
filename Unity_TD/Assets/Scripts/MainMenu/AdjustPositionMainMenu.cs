@@ -7,7 +7,7 @@ public class AdjustPositionMainMenu : MonoBehaviour {
 	void Start () {
 		Vector2 thisPos = GetComponent<RectTransform> ().sizeDelta;
 		RectTransform topRt = GameObject.Find("Canvas/TopPanel").GetComponent<RectTransform>();
-		topRt.sizeDelta = new Vector2 (thisPos.x / 1.21787709497f, thisPos.y/1.72f);
+		topRt.sizeDelta = new Vector2 (thisPos.x / 1.34952662722f, thisPos.y/1.72f);
 		topPos = topRt.sizeDelta;
 		RectTransform botRt = GameObject.Find ("Canvas/BottomPanel").GetComponent<RectTransform> ();
 		botRt.sizeDelta = new Vector2 (topRt.sizeDelta.x, thisPos.y / 2.99130434783f);

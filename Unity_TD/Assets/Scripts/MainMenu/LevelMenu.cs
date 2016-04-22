@@ -79,22 +79,5 @@ public class LevelMenu : MonoBehaviour {
 				i++;
 			}
 		}
-		/*		int i = 0;
-		foreach (GameObject level in levelObject) {
-			GameObject objLevel = Instantiate (level) as GameObject;
-			objLevel.transform.SetParent (this.transform, false);
-
-			RectTransform	rt = objLevel.GetComponent<RectTransform> ();
-
-			if (i % 2 == 0) {
-				rt.localPosition = new Vector3 (x + (x * i), y, 0f);
-			} else {
-				rt.anchorMin = new Vector2 (0, 0);
-				rt.anchorMax = new Vector2 (0, 0);
-				rt.pivot = new Vector2 (0, 0);
-				rt.localPosition = new Vector3 ((x * i), y * -1, 0f);
-			}
-			i++;
-		}*/
 	}
 }
