@@ -31,7 +31,7 @@ public class SpellMenu : MonoBehaviour {
 		double height = GetComponent<RectTransform> ().rect.y;
 
 		RectTransform objRt = GetComponentInParent<AdjustPositionMainMenu> ().gameObject.GetComponent<RectTransform>();
-		RectTransform objTopRt = GetComponentInParent<AdjustPositionMainMenu> ().gameObject.GetComponent<RectTransform>();
+		RectTransform objTopRt = GetComponentInParent<TopMainMenuHandle> ().gameObject.GetComponent<RectTransform>();
 
 		RectTransform thisRt = GetComponent<RectTransform> ();
 		thisRt.sizeDelta = new Vector2 (objTopRt.sizeDelta.x, 0f);
