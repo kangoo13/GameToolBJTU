@@ -37,7 +37,7 @@ class User
 		level = PlayerPrefs.GetInt ("level");
 		gold = PlayerPrefs.GetInt ("gold");
 		playerMana = new Mana ();
-		spellActive = "FireBall";
+		spellActive = "IceBall";
 	}
 }
 
