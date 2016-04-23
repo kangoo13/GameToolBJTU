@@ -14,7 +14,7 @@ public class AdjustPositionMainMenu : MonoBehaviour {
 		botRt.anchoredPosition = new Vector2 (0, thisPos.y / 22.9333333333f);
 
 		RectTransform shopRt = GameObject.Find ("Canvas/BottomPanel/shopButton").GetComponent<RectTransform> ();
-		shopRt.sizeDelta = new Vector2 (thisPos.x/7.69411764706f, thisPos.y / 4.52631578947f);
+		shopRt.sizeDelta = new Vector2 (thisPos.x/7.69411764706f, thisPos.y / 4.52631578947f);			
 
 		RectTransform currentRt = GameObject.Find ("Canvas/BottomPanel/currentLevel").GetComponent<RectTransform> ();
 		currentRt.sizeDelta = new Vector2 (thisPos.x/5.45f, thisPos.y / 9.82857142857f);

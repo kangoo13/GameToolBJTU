@@ -56,7 +56,11 @@ public class SpellMenu : MonoBehaviour {
 			RectTransform imageRt = imageChild.GetComponent<RectTransform> ();
 			imageChild.GetComponentInChildren<Image> ().sprite = UnityEditor.AssetDatabase.LoadAssetAtPath<Sprite> (spell.getTexturePath()) as Sprite;
 			imageRt.GetComponent<RectTransform> ().anchoredPosition = new Vector2 (0, objRt.sizeDelta.y / -28.6666666667f);
-			imageRt.GetComponent<RectTransform> ().sizeDelta = new Vector2 (objRt.sizeDelta.x / 15.5714285714f, objRt.sizeDelta.y / 9.05263157895f);			i++;
+			imageRt.GetComponent<RectTransform> ().sizeDelta = new Vector2 (objRt.sizeDelta.x / 15.5714285714f, objRt.sizeDelta.y / 9.05263157895f);			
+			GameObject textChild = objSpell.transform.GetChild (1).gameObject;
+			Text txt = textChild.GetComponent<Text> ();
+			txt.text = spellName;
+			i++;
 		}
 
 		i = 0;
@@ -74,23 +78,5 @@ public class SpellMenu : MonoBehaviour {
 				i++;
 			}
 		}
-
-		/*		int i = 0;
-		foreach (GameObject level in levelObject) {
-			GameObject objLevel = Instantiate (level) as GameObject;
-			objLevel.transform.SetParent (this.transform, false);
-
-			RectTransform	rt = objLevel.GetComponent<RectTransform> ();
-
-			if (i % 2 == 0) {
-				rt.localPosition = new Vector3 (x + (x * i), y, 0f);
-			} else {
-				rt.anchorMin = new Vector2 (0, 0);
-				rt.anchorMax = new Vector2 (0, 0);
-				rt.pivot = new Vector2 (0, 0);
-				rt.localPosition = new Vector3 ((x * i), y * -1, 0f);
-			}
-			i++;
-		}*/
 	}
 }
