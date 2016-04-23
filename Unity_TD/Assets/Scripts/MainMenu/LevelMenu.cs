@@ -53,14 +53,7 @@ public class LevelMenu : MonoBehaviour {
 
 			lvl.UpdateText();
 
-			//if (i % 2 == 0) {
-				rt.localPosition = new Vector3 (x * i, y, 0f);
-			/*} else {
-				rt.anchorMin = new Vector2 (0, 0);
-				rt.anchorMax = new Vector2 (0, 0);
-				rt.pivot = new Vector2 (0, 0);
-				rt.localPosition = new Vector3 ((x * i), y * -1, 0f);
-			}*/
+			rt.localPosition = new Vector3 (x * i, y, 0f);
 			i++;
 		}
 
@@ -70,11 +63,7 @@ public class LevelMenu : MonoBehaviour {
 		if (l > 0) {
 			total_ajout = 150;
 			while (i != l) {
-				/*if (i == 2) {
-
-				}*/
 				RectTransform rt = GetComponent<RectTransform> ();
-	//			RectTransform rt = transform.parent.GetComponent<RectTransform> ();
 				rt.sizeDelta = new Vector2 (rt.sizeDelta.x + total_ajout, rt.sizeDelta.y);
 				i++;
 			}
