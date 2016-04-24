@@ -4,7 +4,7 @@
 - Hassan BAHA 15129012 (Kilomat)
 - Aurelien SCHILTZ 15129103 (Kangoo13)
 - Jeremy KBIDI 15129028 (crysor)
-- Beau-oudong TAN 15129009 (Beau-oudong)
+- Beau-oudong TAN 15129009 (Angaka)
 
 ### Description
 
@@ -29,11 +29,11 @@ Simple but mandatory:
 - The user can chose on the map where to build the towers
 - The user can chose which level he wants to play
 - The enemies will be killed by the user's towers
-- The user will have a castle with 100 Health points (at the beginning)
+- The user will have a castle with 5 Life points (at the beginning)
 Extras:
 - The user is able to use spells to kill enemies
-- The user can upgrade his towers / castle
-- The user can see his score
+- The user can upgrade his towers / castle (not made)
+- The user can see his score (not made)
 
 ### Architecture
 
