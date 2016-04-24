@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.VersionControl;
 using System.CodeDom;
 using System;
 using UnityEngine.UI;

@@ -9,6 +9,7 @@ interface ISpell {
 	string getSpellName();
 	string getSpellPrefabPath ();
 	Sprite imageSpell { get; set; }
+	int manaCost { get; set; }
 	GameObject prefabAnim { get; set; }
 	float initialDamage { get; set; }
 }

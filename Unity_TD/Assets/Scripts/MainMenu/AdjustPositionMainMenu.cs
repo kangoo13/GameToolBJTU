@@ -6,8 +6,11 @@ public class AdjustPositionMainMenu : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		Vector2 thisPos = GetComponent<RectTransform> ().sizeDelta;
+
+		RectTransform goldRt = GameObject.Find("Canvas/Gold").GetComponent<RectTransform>();
+		goldRt.anchoredPosition = new Vector2 (thisPos.x / -14.5333333333f, thisPos.y / -6.97959183673f);
 		RectTransform topRt = GameObject.Find("Canvas/TopPanel").GetComponent<RectTransform>();
-		topRt.sizeDelta = new Vector2 (thisPos.x / 1.34952662722f, thisPos.y/1.72f);
+		topRt.sizeDelta = new Vector2 (thisPos.x / 1.19343065693f, thisPos.y/1.72f);
 		topPos = topRt.sizeDelta;
 		RectTransform botRt = GameObject.Find ("Canvas/BottomPanel").GetComponent<RectTransform> ();
 		botRt.sizeDelta = new Vector2 (topRt.sizeDelta.x, thisPos.y / 2.99130434783f);

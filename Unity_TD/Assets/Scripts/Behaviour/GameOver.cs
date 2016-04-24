@@ -6,8 +6,9 @@ public class GameOver : MonoBehaviour {
 
 	// Use this for initialization
 	void RestartLevel () {
-		Scene scene = SceneManager.GetActiveScene();
-		SceneManager.LoadScene (scene.buildIndex);
+		ManageTheGame.Instance.Player.Gold += GameManagerBehavior.Instance.totalGoldWon;
+		ManageTheGame.Instance.Player.addExp (GameManagerBehavior.Instance.totalGoldWon);
+		SceneManager.LoadScene ("mainMenu");
 	}
 
 }

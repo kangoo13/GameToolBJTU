@@ -3,20 +3,22 @@ using UnityEngine;
 
 public class FireBall : MonoBehaviour, ISpell
 {
+	public int manaCost { get; set; }
 	public Sprite imageSpell { get; set; }
 	public GameObject prefabAnim { get; set; }
 	public float initialDamage { get; set; }
 
 	public FireBall()
 	{
-		initialDamage = 100f;
+		initialDamage = 40f;
+		manaCost = 50;
 	}
 
 	public string getSpellName()
 	{
 		return "FireBall";
 	}
-
+	/*
 	public string getTexturePath()
 	{
 		return "Assets/Images/Spell/fire-ball-icon-th.png";
@@ -30,6 +32,21 @@ public class FireBall : MonoBehaviour, ISpell
 	public string getSpellPrefabPath()
 	{
 		return "Assets/Prefabs/Spells/FireBall.prefab";
+	}*/
+
+	public string getTexturePath()
+	{
+		return "fire-ball-icon-th";
+	}
+
+	public string getPrefabAnimPath()
+	{
+		return "FireBallAnimPrefab";
+	}
+
+	public string getSpellPrefabPath()
+	{
+		return "FireBall.prefab";
 	}
 
 	public void doAction(Vector3 mousePosition)

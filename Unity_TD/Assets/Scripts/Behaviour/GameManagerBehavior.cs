@@ -9,6 +9,17 @@ public class GameManagerBehavior : MonoBehaviour {
 	public Text goldLabel;
 	public Text manaLabel;
 	private int gold;
+	public int totalGoldWon = 0;
+
+	public Text ManaLabel {
+		get {
+			return manaLabel;
+		}
+		set{
+			manaLabel = value;
+		}
+	}
+
 	public int Gold {
 		get {
 			return gold;
@@ -80,13 +91,26 @@ public class GameManagerBehavior : MonoBehaviour {
 		}
 	}
 
+	IEnumerator regenMana ()
+	{
+		while (true) {
+			if (ManageTheGame.Instance.Player.PlayerMana.CurrentMana < ManageTheGame.Instance.Player.PlayerMana.MaxMana) {
+				ManageTheGame.Instance.Player.PlayerMana.CurrentMana += ManageTheGame.Instance.Player.PlayerMana.RegenMana;
+				manaLabel.text = ManageTheGame.Instance.Player.PlayerMana.CurrentMana.ToString();
+			}
+			yield return new WaitForSeconds(1);
+		}
+	}
+
 	// Use this for initialization
 	void Start () {
-		Gold = 1000;
+		Gold = 50;
 		Wave = 0;
 		Health = 5;
 		instance = this;
+		ManageTheGame.Instance.Player.PlayerMana.CurrentMana = ManageTheGame.Instance.Player.PlayerMana.MaxMana;
 		manaLabel.text = ManageTheGame.Instance.Player.PlayerMana.CurrentMana.ToString();
+		StartCoroutine (regenMana ());
 	}
 
 }

@@ -2,12 +2,20 @@
 using System.Collections;
 
 public class MonsterInfo : MonoBehaviour {
+
+
 	public bool isPoisoned = false;
 	public bool isImmunedToPoison = false;
 	public bool isImmunedToIce = false;
 	public bool isImmunedToStunned = false;
 	public bool isRegenerable = false;
+	public int goldValue = 0;
 
+	public int GoldValue {
+		get {
+			return goldValue;
+		}
+	}
 
 	public void touchedByIce()
 	{

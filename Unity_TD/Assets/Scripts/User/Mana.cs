@@ -18,24 +18,28 @@ class Mana
 
 	public int CurrentMana {
 		get {
-			return maxMana;
+			return currentMana;
 		}
 		set {
-			maxMana = value;
+			currentMana = value;
 		}
 	}
 
 	public int RegenMana {
 		get {
-			return maxMana;
+			return regenMana;
 		}
 		set {
-			maxMana = value;
+			regenMana = value;
 		}
 	}
 
 	public Mana()
 	{
+		if (!PlayerPrefs.HasKey ("maxMana"))
+			PlayerPrefs.SetInt ("maxMana", 100);
+		if (!PlayerPrefs.HasKey ("regenMana"))
+			PlayerPrefs.SetInt ("regenMana", 1);
 		maxMana = PlayerPrefs.GetInt ("maxMana");
 		currentMana = maxMana;
 		regenMana = PlayerPrefs.GetInt ("regenMana");

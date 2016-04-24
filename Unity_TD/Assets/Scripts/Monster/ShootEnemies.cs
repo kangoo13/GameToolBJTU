@@ -43,6 +43,8 @@ public class ShootEnemies : MonoBehaviour {
 	}
 
 	void OnEnemyDestroy (GameObject enemy) {
+		GameManagerBehavior.Instance.Gold += enemy.GetComponent<MonsterInfo>().GoldValue;
+		GameManagerBehavior.Instance.totalGoldWon += enemy.GetComponent<MonsterInfo>().GoldValue;
 		enemiesInRange.Remove (enemy);
 	}
 	

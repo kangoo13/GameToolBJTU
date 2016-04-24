@@ -26,7 +26,7 @@ public class HealthBar : MonoBehaviour {
 			AudioSource audioSource = GetComponentInParent<AudioSource>();
 			AudioSource.PlayClipAtPoint(audioSource.clip, transform.position);
 
-			GameManagerBehavior.Instance.Gold += 50;
+
 			Destroy(this.transform.GetComponentInParent<MonsterInfo>().gameObject);
 
 		}

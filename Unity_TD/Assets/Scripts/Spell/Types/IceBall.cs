@@ -1,17 +1,17 @@
 ﻿using System;
-
-using System;
 using UnityEngine;
 
 public class IceBall : MonoBehaviour, ISpell
 {
+	public int manaCost { get; set; }
 	public Sprite imageSpell { get; set; }
 	public GameObject prefabAnim { get; set; }
 	public float initialDamage { get; set; }
 
 	public IceBall()
 	{
-		initialDamage = 3f;
+		initialDamage = 20f;
+		manaCost = 50;
 	}
 
 	public string getSpellName()
@@ -26,12 +26,12 @@ public class IceBall : MonoBehaviour, ISpell
 
 	public string getTexturePath()
 	{
-		return "Assets/Images/Spell/ice-ball-icon-th.png";
+		return "ice-ball-icon-th";
 	}
 
 	public string getPrefabAnimPath()
 	{
-		return "Assets/Prefabs/SpellAnim/IceBallAnimPrefab.prefab";
+		return "IceBallAnimPrefab";
 	}
 
 	public void doAction(Vector3 mousePosition)

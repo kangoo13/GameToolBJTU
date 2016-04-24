@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.VersionControl;
 using System.CodeDom;
 using System;
 using UnityEngine.UI;
@@ -23,6 +22,7 @@ public class SpellMenu : MonoBehaviour {
 			instantiatedLevel = value;
 		}
 	}
+		
 		
 	void Start() {
 		int i = 0;
@@ -54,12 +54,15 @@ public class SpellMenu : MonoBehaviour {
 			ISpell spell = (ISpell)SpellManager.Instance.addSpellObject (objSpell, spellName);
 			GameObject imageChild = objSpell.transform.GetChild (0).gameObject;
 			RectTransform imageRt = imageChild.GetComponent<RectTransform> ();
-			imageChild.GetComponentInChildren<Image> ().sprite = UnityEditor.AssetDatabase.LoadAssetAtPath<Sprite> (spell.getTexturePath()) as Sprite;
+			Texture2D text = Resources.Load(spell.getTexturePath()) as Texture2D;
+			imageChild.GetComponentInChildren<Image> ().sprite =  Sprite.Create(text, new Rect(0, 0, text.width, text.height), new Vector2(0.5f, 0.5f));
 			imageRt.GetComponent<RectTransform> ().anchoredPosition = new Vector2 (0, objRt.sizeDelta.y / -28.6666666667f);
 			imageRt.GetComponent<RectTransform> ().sizeDelta = new Vector2 (objRt.sizeDelta.x / 15.5714285714f, objRt.sizeDelta.y / 9.05263157895f);			
 			GameObject textChild = objSpell.transform.GetChild (1).gameObject;
 			Text txt = textChild.GetComponent<Text> ();
 			txt.text = spellName;
+			obj.GetComponent<Button> ().onClick.AddListener(() => obj.GetComponent<AdjustItemShop>().setCurrentSpell());
+
 			i++;
 		}
 
